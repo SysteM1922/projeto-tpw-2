@@ -1,10 +1,9 @@
 <app-navbar></app-navbar>
-<div class="relative mt-96 z-10" style="background-image: url('https://placeimg.com/1600/900/nature');">
-    <div class="absolute top-0 left-[50rem] w-[20rem] h-[20rem]" style="background-image: url('https://placeimg.com/1600/900/nature'); content: alt='alt placeholder';"></div>
-  </div>
+<div class="max-w-full h-96 rounded-xl border-[0.6rem] border-primary"
+    style="background: url('https://placeimg.com/2000/1000/nature');" data-aos="fade-down" data-aos-delay="50" duration="50"></div>
 <div class="relative py-16 bg-base-100">
     <div class="container mx-auto px-4">
-        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64" data-aos="zoom-in-up" data-aos-delay="200" duration="100">
 
             <div class="flex justify-around">
                 <div class="w-1/4 lg:w-2/12 ">
@@ -33,7 +32,7 @@
                     </div>
                 </div>
                 <div class=" lg:text-right">
-                    <div class="py-6 mt-32 sm:mt-0">
+                    <div class="py-6 mt-12 sm:mt-4">
                         <a href="">
                             <button
                                 class="bg-base-100 active:bg-base-100 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
@@ -52,15 +51,26 @@
                     <div class="flex flex-wrap justify-center">
                         <div class="w-full lg:w-9/12 px-4">
                             <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-                                Putas 123
-                            </p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non fugit, repellat enim
+                                facilis dolorum voluptatum quo saepe aut ipsam necessitatibus similique iure et
+                                provident. Commodi excepturi doloremque tempora quaerat asperiores veritatis voluptas
+                                dolores laborum autem consectetur impedit, dolore reiciendis, obcaecati ullam et
+                                eligendi magnam quasi ratione. Molestias ex velit quas debitis numquam molestiae iste,
+                                aspernatur hic harum nam eos placeat cupiditate impedit dolores iure vero illum! Ipsa
+                                iure pariatur officia eligendi nostrum ut tempora debitis. Natus veritatis sapiente
+                                nesciunt reiciendis tenetur recusandae incidunt omnis, qui ducimus corporis unde animi
+                                adipisci exercitationem molestias ab hic dolor quas nisi esse, quam ullam. </p>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
     </div>
+
 
     <div id="post-modal-create" tabindex="-1" aria-hidden="true"
         class="hidden overflow-y-auto overflow-x-hidden fixed z-50 md:inset-0 h-modal md:h-50%">
