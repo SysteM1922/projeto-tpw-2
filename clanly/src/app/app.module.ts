@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
+    PostComponent,
 
   ],
   imports: [
