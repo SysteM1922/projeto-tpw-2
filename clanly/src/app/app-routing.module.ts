@@ -3,13 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
-
+import { SearchresultsComponent } from './searchresults/searchresults.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'user', component: UserComponent },
-  { path: '**', redirectTo: '/404', pathMatch: 'full'},
+  { path: 'searchresults', component: SearchresultsComponent },
+  { path: 'page-not-found', component: PageNotFoundComponent},
+  { path: '**', redirectTo: 'page-not-found', pathMatch: 'full'},
 ];
 
 

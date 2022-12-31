@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div class="w-screen text-center">
+    <h1 class="text-7xl my-12">Search Results <i class="fa-solid fa-magnifying-glass"></i></h1>
+</div>
+<div class="content h-screen w-3/4 bg-base-100 flex mx-auto gap-4" role="main">
+    <div class="w-1/6 bg-primary rounded-xl h-96 mt-[1.22rem]" data-aos="fade-right" data-aos-delay="600">
+        <h1 class="text-2xl mt-3 ml-6 text-base-100 font-bold"> Filters</h1>
+        <form>
+            <div class="flex flex-col gap-2 mt-4">
+                <div class="relative w-3/4 mb-3 mx-auto ">
+                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        Clan:
+                    </label>
+                    <label for="underline_select" class="sr-only">Underline select</label>
+                    <select id="underline_select"
+                        class="select py-2.5 text-center px-0 w-full text-sm text-gray-500 bg-white border-1 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                        <option selected>Choose a Clan</option>
+                        <option value="1">Clan 1</option>
+                        <option value="2">Clan 2</option>
+                        <option value="3">Clan 3</option>
+                        <option value="4">Clan 4</option>
+                    </select>
+                </div>
+                <div class="relative w-3/4 mb-3 mx-auto ">
+                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        From:
+                    </label>
+                    <input type="text" placeholder="Username"
+                        class="input w-full text-sm text-center font-bold text-gray-500 bg-white border-1 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" />
+                </div>
+
+                <div class="relative w-3/4 mb-[0.1rem] mx-auto ">
+                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        On:
+                    </label>
+
+                    <div class="relative">
+                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="bg-base-100"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <input datepicker type="text"
+                            class="w-full text-sm text-center  font-bold rounded-lg h-12 text-gray-500 bg-white border-1 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                            placeholder="Select date">
+                    </div>
+                    
+                </div>
+                <div class=" w-full mx-auto flex justify-center">
+                    <button class="btn bg-base-100" type="submit">Apply</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="w-[64.5%]  rounded-xl">
+        <app-post></app-post>
+        <app-post></app-post>
+    </div>
+</div>
