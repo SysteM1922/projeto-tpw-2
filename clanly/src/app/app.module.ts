@@ -8,6 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostComponent } from './post/post.component';
 import { UserComponent } from './user/user.component';
+import { SearchresultsComponent } from './searchresults/searchresults.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SearchtableComponent } from './searchtable/searchtable.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { UserComponent } from './user/user.component';
     NavbarComponent,
     PostComponent,
     UserComponent,
+    SearchresultsComponent,
+    PageNotFoundComponent,
+    SearchtableComponent,
 
   ],
   imports: [
