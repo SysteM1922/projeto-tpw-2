@@ -11,6 +11,7 @@ import { UserComponent } from './user/user.component';
 import { SearchresultsComponent } from './searchresults/searchresults.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchtableComponent } from './searchtable/searchtable.component';
+import { MyclansComponent } from './myclans/myclans.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SearchtableComponent } from './searchtable/searchtable.component';
     SearchresultsComponent,
     PageNotFoundComponent,
     SearchtableComponent,
+    MyclansComponent,
 
   ],
   imports: [
