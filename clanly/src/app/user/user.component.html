@@ -6,7 +6,6 @@
     <div class="container mx-auto px-4">
         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64"
             data-aos="zoom-in-up" data-aos-delay="200" duration="100">
-
             <div class="flex justify-around">
                 <div class="w-1/4 lg:w-2/12 ">
                     <div class="flex justify-between py-4 lg:pt-4 pt-8">
@@ -53,27 +52,35 @@
                     <div class="flex flex-wrap justify-center">
                         <div class="w-full lg:w-9/12 px-4">
                             <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non fugit, repellat enim
-                                facilis dolorum voluptatum quo saepe aut ipsam necessitatibus similique iure et
-                                provident. Commodi excepturi doloremque tempora quaerat asperiores veritatis voluptas
-                                dolores laborum autem consectetur impedit, dolore reiciendis, obcaecati ullam et
-                                eligendi magnam quasi ratione. Molestias ex velit quas debitis numquam molestiae iste,
-                                aspernatur hic harum nam eos placeat cupiditate impedit dolores iure vero illum! Ipsa
-                                iure pariatur officia eligendi nostrum ut tempora debitis. Natus veritatis sapiente
-                                nesciunt reiciendis tenetur recusandae incidunt omnis, qui ducimus corporis unde animi
-                                adipisci exercitationem molestias ab hic dolor quas nisi esse, quam ullam. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-0 py-9 border-t border-blueGray-200 text-center">
-                    <div class="flex flex-wrap justify-center">
-                        <div class="w-full lg:w-9/12 px-4">
-                            <p class="mb-4 text-3xl leading-relaxed text-blueGray-700"> My Posts  <i class="fa fa-arrow-down cursor-pointer mr-1 animate-bounce"></i></p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="mt-4 py-9 border-t border-blueGray-200 bg-blueGray-200 text-center rounded-xl" data-aos="fade-down" data-aos-delay="1500"
+        duration="50">
+            <div class="flex flex-wrap justify-center bg-blueGray-200">
+                <div class="w-full lg:w-9/12 px-4">
+                    <p class="mb-4 text-3xl leading-relaxed text-blueGray-700"> My Stats <i
+                            class="fa fa-arrow-down cursor-pointer mr-1 animate-bounce"></i></p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 p-9 border-t border-blueGray-200 text-center flex justify-center w-full relative  flex-col min-w-0 break-words bg-white mb-6 shadow-xl rounded-lg" data-aos="fade-up" data-aos-delay="50"
+        duration="50">
+            <canvas baseChart [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
+                [legend]="barChartLegend" [type]="'bar'">
+            </canvas>
+        </div>
+        <div class="mt-0 p-9 border-t border-blueGray-200 bg-blueGray-200 text-center flex justify-center w-full relative  flex-col min-w-0 break-words  mb-6 shadow-xl rounded-lg" data-aos="fade-up" data-aos-delay="0"
+        duration="50">
+            <div class="flex flex-wrap justify-center">
+                <div class="w-full lg:w-9/12 px-4">
+                    <p class="mb-4 text-3xl leading-relaxed text-blueGray-700"> My Posts <i
+                            class="fa fa-arrow-down cursor-pointer mr-1 animate-bounce"></i></p>
+                </div>
+            </div>
         </div>
         <app-post></app-post>
         <app-post></app-post>

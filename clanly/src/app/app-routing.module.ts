@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'myclans', component: MyclansComponent },
   { path: 'page-not-found', component: PageNotFoundComponent},
   { path : 'signup', component: SignupComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: '**', redirectTo: 'page-not-found', pathMatch: 'full'},
 ];
 

@@ -10,9 +10,12 @@ import { PostComponent } from './post/post.component';
 import { UserComponent } from './user/user.component';
 import { SearchresultsComponent } from './searchresults/searchresults.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SearchtableComponent } from './searchtable/searchtable.component';
+import { SearchtableComponent } from './searchresults/searchtable/searchtable.component';
+import { SearchfiltersComponent } from './searchresults/searchfilters/searchfilters.component';
 import { MyclansComponent } from './myclans/myclans.component';
 import { SignupComponent } from './signup/signup.component';
+import { FormComponent } from './form/form.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -25,14 +28,17 @@ import { SignupComponent } from './signup/signup.component';
     SearchresultsComponent,
     PageNotFoundComponent,
     SearchtableComponent,
+    SearchfiltersComponent,
     MyclansComponent,
     SignupComponent,
+    FormComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxTypedJsModule
+    NgxTypedJsModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
