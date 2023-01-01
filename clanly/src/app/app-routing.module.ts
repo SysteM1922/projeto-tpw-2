@@ -7,11 +7,12 @@ import { SearchresultsComponent } from './searchresults/searchresults.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MyclansComponent } from './myclans/myclans.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { ClanComponent } from './clan/clan.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'user', component: UserComponent },
+  { path: 'clan', component: ClanComponent },
   { path: 'searchresults', component: SearchresultsComponent },
   { path: 'myclans', component: MyclansComponent },
   { path: 'page-not-found', component: PageNotFoundComponent},
