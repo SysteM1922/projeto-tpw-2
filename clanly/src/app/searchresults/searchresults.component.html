@@ -1,9 +1,15 @@
 <app-navbar></app-navbar>
-<div class="w-screen text-center">
-    <h1 class="text-7xl my-12" data-aos="fade-down">Search Results <i class="fa-solid fa-magnifying-glass"></i></h1>
+<div class="w-screen mb-28 flex lg:justify-end justify-center">
+    <ngx-typed-js class="text-7xl mt-24 typing mx-auto lg:ml-[42rem]" data-aos="fade-in-down"
+        [strings]="['Searsh Results', 'Search Results']" [smartBackspace]="true" [typeSpeed]="100" [backSpeed]="100"
+        [showCursor]="false" [backDelay]="1000" [autoInsertCss]="true">
+        <h1 class="typing z-10 lg:text-end"> </h1>
+        <h1 class="text-end z-10 -mt-[4.5rem] -mr-24"><i class="fa-solid fa-search"></i></h1>
+    </ngx-typed-js>
 </div>
+
 <div class="content h-screen w-3/4 bg-base-100 flex mx-auto gap-4" role="main">
-    <div class="w-1/6 bg-primary rounded-xl h-96 mt-[0rem] shadow-2xl" data-aos="fade-right" data-aos-delay="600">
+    <div class="w-1/6 bg-primary rounded-xl h-96 mt-[0rem] shadow-2xl" data-aos="fade-right" data-aos-delay="3000">
         <h1 class="text-2xl mt-3 ml-6 text-base-100 font-bold"> Filters</h1>
         <form>
             <div class="flex flex-col gap-2 mt-4">
@@ -47,7 +53,7 @@
                             class="w-full text-sm text-center  font-bold rounded-lg h-12 text-gray-500 bg-white border-1 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                             placeholder="Select date">
                     </div>
-                    
+
                 </div>
                 <div class=" w-full mx-auto flex justify-center">
                     <button class="btn bg-base-100" type="submit">Apply</button>
@@ -59,4 +65,5 @@
     <div class="w-[64.5%]  rounded-xl">
         <app-searchtable></app-searchtable>
     </div>
+
 </div>
