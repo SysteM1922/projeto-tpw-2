@@ -7,6 +7,7 @@ import { SearchresultsComponent } from './searchresults/searchresults.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MyclansComponent } from './myclans/myclans.component';
 import { SignupComponent } from './signup/signup.component';
+import { CreateclanComponent } from './createclan/createclan.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'searchresults', component: SearchresultsComponent },
   { path: 'myclans', component: MyclansComponent },
+  { path: 'createclan', component: CreateclanComponent },
   { path: 'page-not-found', component: PageNotFoundComponent},
   { path : 'signup', component: SignupComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full'},

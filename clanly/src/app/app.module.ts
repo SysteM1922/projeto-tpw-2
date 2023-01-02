@@ -18,6 +18,8 @@ import { FormComponent } from './form/form.component';
 import { NgChartsModule } from 'ng2-charts';
 import { MenuComponent } from './navbar/menu/menu.component';
 import { SearchComponent } from './navbar/search/search.component';
+import { CreateformComponent } from './createform/createform.component';
+import { CreateclanComponent } from './createclan/createclan.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { SearchComponent } from './navbar/search/search.component';
     FormComponent,
     MenuComponent,
     SearchComponent,
+    CreateformComponent,
+    CreateclanComponent
 
   ],
   imports: [
