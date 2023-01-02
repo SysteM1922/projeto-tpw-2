@@ -28,6 +28,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfilebannerComponent } from './profile/profilebanner/profilebanner.component';
 import { ProfilestatsComponent } from './profile/profilestats/profilestats.component';
 import { ProfileseparatorComponent } from './profile/profileseparator/profileseparator.component';
+import { BigformComponent } from './bigform/bigform.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { TrollagemComponent } from './trollagem/trollagem.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +57,10 @@ import { ProfileseparatorComponent } from './profile/profileseparator/profilesep
     ProfileComponent,
     ProfilebannerComponent,
     ProfilestatsComponent,
-    ProfileseparatorComponent
+    ProfileseparatorComponent,
+    BigformComponent,
+    EditprofileComponent,
+    TrollagemComponent
   ],
   imports: [
     BrowserModule,
