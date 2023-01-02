@@ -21,6 +21,8 @@ import { SearchComponent } from './navbar/search/search.component';
 import { CreateclanComponent } from './createclan/createclan.component';
 import { CreateformComponent } from './signup/createform/createform.component';
 import { ClanformComponent } from './createclan/clanform/clanform.component';
+import { PostpageComponent } from './postpage/postpage.component';
+import { BreadcrumbComponent } from './post/breadcrumb/breadcrumb.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import { ClanformComponent } from './createclan/clanform/clanform.component';
     SearchComponent,
     CreateclanComponent,
     CreateformComponent,
-    ClanformComponent
+    ClanformComponent,
+    PostpageComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,

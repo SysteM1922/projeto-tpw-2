@@ -8,10 +8,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MyclansComponent } from './myclans/myclans.component';
 import { SignupComponent } from './signup/signup.component';
 import { CreateclanComponent } from './createclan/createclan.component';
-
+import { PostpageComponent } from './postpage/postpage.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'postpage', component: PostpageComponent},
   { path: 'user', component: UserComponent },
   { path: 'searchresults', component: SearchresultsComponent },
   { path: 'myclans', component: MyclansComponent },
