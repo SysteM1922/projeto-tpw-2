@@ -18,9 +18,9 @@ import { FormComponent } from './form/form.component';
 import { NgChartsModule } from 'ng2-charts';
 import { MenuComponent } from './navbar/menu/menu.component';
 import { SearchComponent } from './navbar/search/search.component';
-import { CreateformComponent } from './createform/createform.component';
 import { CreateclanComponent } from './createclan/createclan.component';
-
+import { CreateformComponent } from './signup/createform/createform.component';
+import { ClanformComponent } from './createclan/clanform/clanform.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +38,9 @@ import { CreateclanComponent } from './createclan/createclan.component';
     FormComponent,
     MenuComponent,
     SearchComponent,
+    CreateclanComponent,
     CreateformComponent,
-    CreateclanComponent
-
+    ClanformComponent
   ],
   imports: [
     BrowserModule,

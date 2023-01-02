@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ClanComponent } from './clan.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ClanComponent
+  ],
   imports: [
     CommonModule
   ]
