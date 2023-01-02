@@ -16,13 +16,6 @@ import { MyclansComponent } from './myclans/myclans.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormComponent } from './form/form.component';
 import { NgChartsModule } from 'ng2-charts';
-import { ProfileComponent } from './profile/profile.component';
-import { ProfilebannerComponent } from './profile/profilebanner/profilebanner.component';
-import { ProfileseparatorComponent } from './profile/profileseparator/profileseparator.component';
-import { ProfilestatsComponent } from './profile/profilestats/profilestats.component';
-import { MenuComponent } from './navbar/menu/menu.component';
-import { SearchComponent } from './navbar/search/search.component';
-import { ClanComponent } from './clan/clan.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +32,6 @@ import { ClanComponent } from './clan/clan.component';
     MyclansComponent,
     SignupComponent,
     FormComponent,
-    ProfileComponent,
-    ProfilebannerComponent,
-    ProfileseparatorComponent,
-    ProfilestatsComponent,
-    MenuComponent,
-    SearchComponent,
-    ClanComponent
 
   ],
   imports: [
