@@ -23,6 +23,8 @@ import { CreateformComponent } from './signup/createform/createform.component';
 import { ClanformComponent } from './createclan/clanform/clanform.component';
 import { PostpageComponent } from './postpage/postpage.component';
 import { BreadcrumbComponent } from './post/breadcrumb/breadcrumb.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfilebannerComponent } from './profile/profilebanner/profilebanner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,9 @@ import { BreadcrumbComponent } from './post/breadcrumb/breadcrumb.component';
     CreateformComponent,
     ClanformComponent,
     PostpageComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    ProfileComponent,
+    ProfilebannerComponent
   ],
   imports: [
     BrowserModule,
