@@ -8,7 +8,11 @@
 
             <div class=" rounded-lg overflow-hidden border w-full lg:w-12/12 md:w-12/12 bg-white mx-auto">
                 <div class="w-full flex justify-between p-3">
-                        <app-breadcrumb></app-breadcrumb>
+                    <app-breadcrumb></app-breadcrumb>
+                    <div class="mx-1 tooltip tooltip-left" data-tip="Delete Post">
+                        <button><i
+                                class="fa-solid fa-trash text-2xl text-error hover:animate-pulse select-none"></i></button>
+                    </div>
                 </div>
 
                 <div class="px-3 pb-2">
@@ -52,10 +56,13 @@
 
                                 <div id="accordion-flush-body-1" class="" aria-labelledby="accordion-flush-heading-1">
                                     <div class="py-5 font-light text-base-200">
-                                        <span class=" mr-2 text-base-100 hover:underline cursor-pointer font-extrabold">u/user</span>Lorem ipsum dolor sit
+                                        <span
+                                            class=" mr-2 text-base-100 hover:underline cursor-pointer font-extrabold">u/user</span>Lorem
+                                        ipsum dolor sit
                                         amet, consectetur adipisicing elit. Quae, magnam?
-                                        <div class="mx-1 tooltip" data-tip="Delete Comment" >
-                                            <button><i class="fa-solid fa-trash text-l text-error hover:animate-pulse select-none"></i></button>
+                                        <div class="mx-1 tooltip" data-tip="Delete Comment">
+                                            <button><i
+                                                    class="fa-solid fa-trash text-l text-error hover:animate-pulse select-none"></i></button>
                                         </div>
                                     </div>
                                 </div>
