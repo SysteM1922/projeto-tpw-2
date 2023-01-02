@@ -8,7 +8,7 @@
 
             <div class=" rounded-lg overflow-hidden border w-full lg:w-12/12 md:w-12/12 bg-white mx-auto">
                 <div class="w-full flex justify-between p-3">
-                    <app-breadcrumb></app-breadcrumb>
+                    <app-breadcrumb clan="clan" user="user"></app-breadcrumb>
                     <div class="mx-1 tooltip tooltip-left" data-tip="Delete Post">
                         <button><i
                                 class="fa-solid fa-trash text-2xl text-error hover:animate-pulse select-none"></i></button>
@@ -20,19 +20,11 @@
 
                         <h1
                             class="mb-4 text-3xl font-extrabold leading-tight text-black lg:mb-6 lg:text-4xl text-center hover:underline cursor-pointer">
-                            Lorem ipsum dolor sit amet.</h1>
+                            {{title}}</h1>
                         <figure class="mx-auto mb-6">
                             <img class="mx-auto rounded-lg" src="https://placeimg.com/1000/380/arch" alt="postpic">
                         </figure>
-                        <p class="text-gray-500 mx-6">Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Necessitatibus, rerum. Quas omnis, in quam aperiam iusto animi beatae
-                            temporibus nulla perspiciatis earum quidem modi autem voluptate laboriosam deserunt dolorum
-                            aut harum laborum velit magnam eius. Esse veritatis corporis distinctio numquam eum nisi
-                            sint magnam, minima, quas itaque ipsa cum fuga, dolore ea? Odio pariatur vel explicabo harum
-                            nesciunt debitis error vitae doloribus totam ea at ullam inventore quidem nobis, consectetur
-                            fugit minus necessitatibus? Provident tenetur obcaecati in id adipisci eveniet, omnis, at
-                            dolorum aspernatur commodi quasi unde voluptatibus similique earum, alias iste suscipit
-                            vitae nisi ex ad sunt! Quia, nostrum.
+                        <p class="text-gray-500 mx-6">{{content}}
 
                         </p>
 
