@@ -25,6 +25,8 @@ import { PostpageComponent } from './postpage/postpage.component';
 import { BreadcrumbComponent } from './post/breadcrumb/breadcrumb.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfilebannerComponent } from './profile/profilebanner/profilebanner.component';
+import { ProfilestatsComponent } from './profile/profilestats/profilestats.component';
+import { ProfileseparatorComponent } from './profile/profileseparator/profileseparator.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,9 @@ import { ProfilebannerComponent } from './profile/profilebanner/profilebanner.co
     PostpageComponent,
     BreadcrumbComponent,
     ProfileComponent,
-    ProfilebannerComponent
+    ProfilebannerComponent,
+    ProfilestatsComponent,
+    ProfileseparatorComponent
   ],
   imports: [
     BrowserModule,

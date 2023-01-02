@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { NgIfContext } from '@angular/common';
+import { Component, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  @Input() entity?: string;
 
 }

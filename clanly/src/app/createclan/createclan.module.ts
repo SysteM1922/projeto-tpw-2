@@ -6,7 +6,7 @@ import { ClanformComponent } from './clanform/clanform.component';
 
 @NgModule({
   declarations: [
-    ClanformComponent
+
   ],
   imports: [
     CommonModule
