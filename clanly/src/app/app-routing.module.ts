@@ -9,6 +9,7 @@ import { MyclansComponent } from './myclans/myclans.component';
 import { SignupComponent } from './signup/signup.component';
 import { CreateclanComponent } from './createclan/createclan.component';
 import { PostpageComponent } from './postpage/postpage.component';
+import { ClanComponent } from './clan/clan.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'searchresults', component: SearchresultsComponent },
   { path: 'myclans', component: MyclansComponent },
+  { path: 'clan', component: ClanComponent },
   { path: 'createclan', component: CreateclanComponent },
   { path: 'page-not-found', component: PageNotFoundComponent},
   { path : 'signup', component: SignupComponent},

@@ -21,6 +21,7 @@ import { SearchComponent } from './navbar/search/search.component';
 import { CreateclanComponent } from './createclan/createclan.component';
 import { CreateformComponent } from './signup/createform/createform.component';
 import { ClanformComponent } from './createclan/clanform/clanform.component';
+import { ClanComponent } from './clan/clan.component';
 import { PostpageComponent } from './postpage/postpage.component';
 import { BreadcrumbComponent } from './post/breadcrumb/breadcrumb.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -45,6 +46,7 @@ import { ProfileseparatorComponent } from './profile/profileseparator/profilesep
     MenuComponent,
     SearchComponent,
     CreateclanComponent,
+    ClanComponent,
     CreateformComponent,
     ClanformComponent,
     PostpageComponent,

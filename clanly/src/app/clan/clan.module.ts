@@ -6,7 +6,6 @@ import { ClanComponent } from './clan.component';
 
 @NgModule({
   declarations: [
-    ClanComponent
   ],
   imports: [
     CommonModule

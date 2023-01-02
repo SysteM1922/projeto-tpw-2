@@ -27,19 +27,39 @@
                 </div>
             </div>
         </div>
-        <div class="w-1/4 lg:w-2/12">
-            <div class="mx-auto">
+        <div class="w-1/4 lg:w-2/12" *ngIf="entity === 'user'">
+            <div class="mx-auto" >
+                <img alt="..." src="https://placeimg.com/400/400/people"
+                    class="shadow-xl rounded-full h-auto border-none absolute lg:-m-11 max-w-150-px ">
+            </div>
+        </div>
+        <div class="w-1/4 lg:w-2/12 -mr-[7.9rem]" *ngIf="entity === 'clan'">
+            <div class="mx-auto" >
                 <img alt="..." src="https://placeimg.com/400/400/people"
                     class="shadow-xl rounded-full h-auto border-none absolute lg:-m-11 max-w-150-px ">
             </div>
         </div>
         <div class=" lg:text-right">
             <div class="py-6 mt-12 sm:mt-4">
-                <a href="">
+                <a href="" *ngIf="entity === 'user'">
                     <button
                         class="bg-base-100 active:bg-base-100 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
                         type="button">
                         Edit
+                    </button>
+                </a>
+                <a href="" *ngIf="entity === 'clan'">
+                    <button
+                        class="bg-base-100 active:bg-base-100 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+                        type="button">
+                        Follow
+                    </button>
+                </a>
+                <a href="" *ngIf="entity === 'clan'">
+                    <button
+                        class="bg-primary active:bg-base-300 uppercase text-base-100 font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+                        type="button">
+                        Unfollow
                     </button>
                 </a>
             </div>
@@ -59,6 +79,7 @@
         </div>
     </div>
 </div>
-<app-profileseparator title="My Stats"></app-profileseparator>
-<app-profilestats></app-profilestats>
-<app-profileseparator title="My Posts"></app-profileseparator>
+<app-profileseparator title="My Stats" *ngIf="entity === 'user'"></app-profileseparator>
+<app-profilestats *ngIf="entity === 'user'"></app-profilestats>
+<app-profileseparator *ngIf="entity === 'user'" title="My Posts"></app-profileseparator>
+<app-profileseparator *ngIf="entity === 'clan'" title="Clan's Posts"></app-profileseparator>

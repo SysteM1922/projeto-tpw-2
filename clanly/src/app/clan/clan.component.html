@@ -1,1 +1,10 @@
-<p>clan works!</p>
+<app-navbar></app-navbar>
+<app-profilebanner></app-profilebanner>
+<div class="relative py-16 bg-base-100">
+    <div class="container mx-auto px-4">
+        <app-profile entity="clan"></app-profile>
+        <div *ngFor="let index of [0,1,2,3]">
+            <app-post></app-post>
+        </div>
+    </div>
+</div>
