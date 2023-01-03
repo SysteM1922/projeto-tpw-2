@@ -8,8 +8,6 @@ import { CommentComponent } from './comment/comment.component';
 @NgModule({
   declarations: [
 
-  
-    CommentComponent
   ],
   imports: [
     CommonModule
