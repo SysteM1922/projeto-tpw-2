@@ -30,7 +30,6 @@ import { ProfilestatsComponent } from './profile/profilestats/profilestats.compo
 import { ProfileseparatorComponent } from './profile/profileseparator/profileseparator.component';
 import { BigformComponent } from './bigform/bigform.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
-import { TrollagemComponent } from './trollagem/trollagem.component';
 import { CommentComponent } from './post/comment/comment.component';
 @NgModule({
   declarations: [
@@ -62,7 +61,6 @@ import { CommentComponent } from './post/comment/comment.component';
     BigformComponent,
     EditprofileComponent,
     CommentComponent,
-    TrollagemComponent
   ],
   imports: [
     BrowserModule,
