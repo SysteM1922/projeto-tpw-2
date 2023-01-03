@@ -1,4 +1,4 @@
-<div class="h-100 bg-base-100 pb-20 my-5" data-aos="zoom-in-up" data-aos-delay="200" duration="50">
+<div class="h-100 bg-base-100 pb-5 my-5" data-aos="zoom-in-up" duration="50">
     <div class="container mx-auto w-[23.5rem] lg:w-full">
         <!--<h1 class="lg:text-2xl text-lg font-extrabold leading-none text-gray-900 tracking-tight mb-5"> Feed </h1>--->
 
@@ -8,17 +8,10 @@
 
             <div class=" rounded-lg overflow-hidden border w-full lg:w-12/12 md:w-12/12 bg-white mx-auto">
                 <div class="w-full flex justify-between p-3">
-                    <div class="flex">
-                        <span class="pt-1 mx-1 font-bold text-sm text-base-400">in</span>
-                        <div class="mx-1 rounded-full h-8 w-8 flex items-center justify-center overflow-hidden ">
-                            <img src="https://placeimg.com/33/33/arch" alt="profilepic">
-                        </div>
-                        <span class="pt-1 mr-1 font-bold text-sm text-base-300">c/clan</span>
-                        <span class="pt-1 mx-1 font-bold text-sm text-base-400">by</span>
-                        <div class=" mx-1 rounded-full h-8 w-8 flex items-center justify-center overflow-hidden">
-                            <img src="https://placeimg.com/50/50/arch" alt="profilepic">
-                        </div>
-                        <span class="pt-1 mr-1 font-bold text-sm text-base-300">u/user</span>
+                    <app-breadcrumb clan="clan" user="user"></app-breadcrumb>
+                    <div class="mx-1 tooltip tooltip-left" data-tip="Delete Post">
+                        <button><i
+                                class="fa-solid fa-trash text-2xl text-error hover:animate-pulse select-none"></i></button>
                     </div>
                 </div>
 
@@ -26,21 +19,12 @@
                     <div class="pt-1 mb-2 text-sm w-xl">
 
                         <h1
-                            class="mb-4 text-3xl font-extrabold leading-tight text-black lg:mb-6 lg:text-4xl text-center">
-                            Lorem ipsum dolor sit amet.</h1>
+                            class="mb-4 text-3xl font-extrabold leading-tight text-black lg:mb-6 lg:text-4xl text-center hover:underline cursor-pointer">
+                            {{title}}</h1>
                         <figure class="mx-auto mb-6">
                             <img class="mx-auto rounded-lg" src="https://placeimg.com/1000/380/arch" alt="postpic">
                         </figure>
-                        <p class="text-gray-600 dark:text-gray-400 mx-6">Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Necessitatibus, rerum. Quas omnis, in quam aperiam iusto animi beatae
-                            temporibus nulla perspiciatis earum quidem modi autem voluptate laboriosam deserunt dolorum
-                            aut harum laborum velit magnam eius. Esse veritatis corporis distinctio numquam eum nisi
-                            sint magnam, minima, quas itaque ipsa cum fuga, dolore ea? Odio pariatur vel explicabo harum
-                            nesciunt debitis error vitae doloribus totam ea at ullam inventore quidem nobis, consectetur
-                            fugit minus necessitatibus? Provident tenetur obcaecati in id adipisci eveniet, omnis, at
-                            dolorum aspernatur commodi quasi unde voluptatibus similique earum, alias iste suscipit
-                            vitae nisi ex ad sunt! Quia, nostrum.
-
+                        <p class="text-gray-500 mx-6">{{content}}
                         </p>
 
                     </div>
@@ -56,18 +40,13 @@
                                         class="flex items-center justify-center w-full py-5 font-medium text-left border-b border-gray-20 bg-white text-gray-900 dark:text-white"
                                         data-accordion-target="#accordion-flush-body-1" aria-expanded="true"
                                         aria-controls="accordion-flush-body-1">
-                                        <i class="fa fa-arrow-down cursor-pointer mr-1"></i>
+                                        <i class="fa fa-arrow-down cursor-pointer mr-1 animate-bounce"></i>
                                         <span class="text-sm text-gray-400 font-medium">Comments</span>
                                     </button>
                                 </h2>
 
                                 <div id="accordion-flush-body-1" class="" aria-labelledby="accordion-flush-heading-1">
-                                    <div class="py-5 font-light">
-                                        <span class="font-medium mr-2">Lorem, ipsum.</span>Lorem ipsum dolor sit
-                                        amet, consectetur adipisicing elit. Quae, magnam?
-                                    </div>
-                                </div>
-
+                                    <app-comment author="user" content= "Lorem ipsum dolor sit amet consectetur"></app-comment>
                                 <div class="w-20% px-3 mt-2 ">
                                     <form action="/c/" method="post">
                                         <input type="text" name="content"
