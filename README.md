@@ -20,6 +20,8 @@ have to be done through URLs, provided at the end of this document.
 
 The Angular Project: [clanly-tpw2.firebaseapp.com](clanly-tpw2.firebaseapp.com)
 
+The DRF Project: [SysteM1922.pythonanywhere.com](SysteM1922.pythonanywhere.com)
+
 ## Deployment Local
 
 To deploy locally, follow ahead:
@@ -43,7 +45,7 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-## Credenciais de acesso
+## Access credentials
 
 Since there was no authentication implemented, there are no credentials required.
 
