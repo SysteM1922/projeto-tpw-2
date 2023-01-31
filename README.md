@@ -131,70 +131,97 @@ The str method returns the name of the clan.
 Each function first validates the user's JWT token before processing the request. If the token is invalid, it returns an error message. The validation is done by checking if the token exists in the Tokens model using the validate_token function.
 Create a Clan
 
-POST /api/create_clan
+## Create a Clan
+
+`POST /api/create_clan`
 
 Create a new clan.
-Input
-Parameter	Type	Description
-token	string	Access token to authenticate the request.
-name	string	Name of the new clan.
-desc	string	Description of the new clan.
-img	base64 string	Image for the clan, encoded as base64.
-background_img	base64 string	Background image for the clan, encoded as base64.
-Output
+
+#### Input
+
+| Parameter        | Type          | Description                                       |
+| ---------------- | ------------- | ------------------------------------------------- |
+| `token`          | string        | Access token to authenticate the request.         |
+| `name`           | string        | Name of the new clan.                             |
+| `desc`           | string        | Description of the new clan.                      |
+| `img`            | base64 string | Image for the clan, encoded as base64.            |
+| `background_img` | base64 string | Background image for the clan, encoded as base64. |
+
+#### Output
 
 On success, returns a JSON object with the following fields:
-Field	Type	Description
-success	string	Message indicating the clan was created successfully.
+
+| Field     | Type   | Description                                           |
+| --------- | ------ | ----------------------------------------------------- |
+| `success` | string | Message indicating the clan was created successfully. |
 
 On error, returns a JSON object with the following fields:
-Field	Type	Description
-error	string	Error message.
-Get My Clans
 
-GET /api/my_clans
+| Field   | Type   | Description    |
+| ------- | ------ | -------------- |
+| `error` | string | Error message. |
+
+## Get My Clans
+
+`GET /api/my_clans`
 
 Get the clans that the user is either an admin or follower of.
-Input
-Parameter	Type	Description
-token	string	Access token to authenticate the request.
-Output
+
+#### Input
+
+| Parameter | Type   | Description                               |
+| --------- | ------ | ----------------------------------------- |
+| `token`   | string | Access token to authenticate the request. |
+
+#### Output
 
 On success, returns a JSON object with the following fields:
-Field	Type	Description
-clans	array of objects	Array of clan information.
+
+| Field   | Type             | Description                |
+| ------- | ---------------- | -------------------------- |
+| `clans` | array of objects | Array of clan information. |
 
 Each clan object has the following fields:
-Field	Type	Description
-id	integer	ID of the clan.
-name	string	Name of the clan.
-desc	string	Description of the clan.
-img	string	Image for the clan.
-background	string	Background image for the clan.
-isAdmin	boolean	Whether the user is an admin of the clan.
+
+| Field        | Type    | Description                               |
+| ------------ | ------- | ----------------------------------------- |
+| `id`         | integer | ID of the clan.                           |
+| `name`       | string  | Name of the clan.                         |
+| `desc`       | string  | Description of the clan.                  |
+| `img`        | string  | Image for the clan.                       |
+| `background` | string  | Background image for the clan.            |
+| `isAdmin`    | boolean | Whether the user is an admin of the clan. |
 
 On error, returns a JSON object with the following fields:
-Field	Type	Description
-error	string	Error message.
-Update a Clan
 
-PUT /api/update_clan
+| Field   | Type   | Description    |
+| ------- | ------ | -------------- |
+| `error` | string | Error message. |
+
+## Update a Clan
+
+`PUT /api/update_clan`
 
 Update an existing clan.
-Input
-Parameter	Type	Description
-token	string	Access token to authenticate the request.
-id	integer	ID of the clan to update.
-name	string	New name of the clan.
-desc	string	New description of the clan.
-img	base64 string	New image for the clan, encoded as base64.
-background_img	base64 string	New background image for the clan, encoded as base64.
-Output
+
+#### Input
+
+| Parameter        | Type          | Description                                           |
+| ---------------- | ------------- | ----------------------------------------------------- |
+| `token`          | string        | Access token to authenticate the request.             |
+| `id`             | integer       | ID of the clan to update.                             |
+| `name`           | string        | New name of the clan.                                 |
+| `desc`           | string        | New description of the clan.                          |
+| `img`            | base64 string | New image for the clan, encoded as base64.            |
+| `background_img` | base64 string | New background image for the clan, encoded as base64. |
+
+#### Output
 
 On success, returns a JSON object with the following fields:
-Field	Type	Description
-success	string	Message indicating the clan was updated successfully.
 
+| Field     | Type   | Description                                           |
+| --------- | ------ | ----------------------------------------------------- |
+| `success` | string | Message indicating the clan was updated successfully. |
 ## URLs
 
 ### Página de Login (Starting Page)
