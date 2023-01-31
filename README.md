@@ -120,6 +120,81 @@ Clan Model
     The clan has a date_created field, which is a date-time field and is set to the current date and time when the clan is created date_created = models.DateTimeField(auto_now_add=True).
 The str method returns the name of the clan.
 
+## Endpoints
+    login: authentication of a user based on their username and password. If successful, it generates a JWT token and stores it in the Tokens model.
+    signup: creates a new user account with a given username, email, name, and password.
+    logout: deletes the JWT token from the Tokens model.
+    profile: returns the user profile information, including the profile image, cover image, number of posts, comments, and followers, as well as the posts associated with the user.
+    basic_profile: returns the basic profile information, including the name and bio.
+    basic_clan: returns the basic information of a clan, including its name and description.
+   
+Each function first validates the user's JWT token before processing the request. If the token is invalid, it returns an error message. The validation is done by checking if the token exists in the Tokens model using the validate_token function.
+Create a Clan
+
+POST /api/create_clan
+
+Create a new clan.
+Input
+Parameter	Type	Description
+token	string	Access token to authenticate the request.
+name	string	Name of the new clan.
+desc	string	Description of the new clan.
+img	base64 string	Image for the clan, encoded as base64.
+background_img	base64 string	Background image for the clan, encoded as base64.
+Output
+
+On success, returns a JSON object with the following fields:
+Field	Type	Description
+success	string	Message indicating the clan was created successfully.
+
+On error, returns a JSON object with the following fields:
+Field	Type	Description
+error	string	Error message.
+Get My Clans
+
+GET /api/my_clans
+
+Get the clans that the user is either an admin or follower of.
+Input
+Parameter	Type	Description
+token	string	Access token to authenticate the request.
+Output
+
+On success, returns a JSON object with the following fields:
+Field	Type	Description
+clans	array of objects	Array of clan information.
+
+Each clan object has the following fields:
+Field	Type	Description
+id	integer	ID of the clan.
+name	string	Name of the clan.
+desc	string	Description of the clan.
+img	string	Image for the clan.
+background	string	Background image for the clan.
+isAdmin	boolean	Whether the user is an admin of the clan.
+
+On error, returns a JSON object with the following fields:
+Field	Type	Description
+error	string	Error message.
+Update a Clan
+
+PUT /api/update_clan
+
+Update an existing clan.
+Input
+Parameter	Type	Description
+token	string	Access token to authenticate the request.
+id	integer	ID of the clan to update.
+name	string	New name of the clan.
+desc	string	New description of the clan.
+img	base64 string	New image for the clan, encoded as base64.
+background_img	base64 string	New background image for the clan, encoded as base64.
+Output
+
+On success, returns a JSON object with the following fields:
+Field	Type	Description
+success	string	Message indicating the clan was updated successfully.
+
 ## URLs
 
 ### Página de Login (Starting Page)
