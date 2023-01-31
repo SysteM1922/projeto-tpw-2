@@ -11,14 +11,16 @@ import { CreateclanComponent } from './components/createclan/createclan.componen
 import { PostpageComponent } from './components/postpage/postpage.component';
 import { ClanComponent } from './components/clan/clan.component';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
+import { EditclanComponent } from './components/editclan/editclan.component';
 import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent, canActivate: [AuthService]},
+  { path: 'login', component: LoginComponent, canActivate: [AuthService] },
   { path: 'home', component: HomeComponent, canActivate: [AuthService] },
-  { path: 'postpage', component: PostpageComponent, canActivate: [AuthService]},
+  { path: 'postpage', component: PostpageComponent, canActivate: [AuthService] },
   { path: 'user', component: UserComponent, canActivate: [AuthService] },
   { path: 'editprofile', component: EditprofileComponent, canActivate: [AuthService] },
+  { path: 'editclan/:id', component: EditclanComponent, canActivate: [AuthService] },
   { path: 'searchresults', component: SearchresultsComponent, canActivate: [AuthService] },
   { path: 'myclans', component: MyclansComponent, canActivate: [AuthService] },
   { path: 'clan/:id', component: ClanComponent, canActivate: [AuthService]},

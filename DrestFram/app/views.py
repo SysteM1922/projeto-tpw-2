@@ -1,19 +1,21 @@
 from datetime import datetime
 from rest_framework.decorators import api_view
-from rest_framework import status
 from rest_framework.response import Response
 
 from .models import Comment, Clan, Post, Profile, User, Tokens
 from app.serializers import *
 
 from django.contrib.auth import authenticate
-from rest_framework import views, status
 from rest_framework.response import Response
 from rest_framework_jwt.settings import api_settings
 
+from django.core.files.base import ContentFile
+from unidecode import unidecode
+
 import re
 import base64
-from django.core.files.base import ContentFile
+
+
 # Create your views here.
 
 IMG_URL = 'http://localhost:8000/images/'
@@ -110,6 +112,16 @@ def basic_profile(request):
     bio = profile.bio
     return Response({"name": name, "bio": bio})
 
+@api_view(['GET'])
+def basic_clan(request):
+    token = request.GET['token']
+    if not validate_token(token):
+        return Response({"error": "Invalid token"})
+    clan = Clan.objects.get(id=request.GET['id'])
+    name = clan.name
+    desc = clan.desc
+    return Response({"name": name, "desc": desc})
+
 @api_view(['PUT'])
 def update_profile(request):
 
@@ -176,6 +188,7 @@ def create_clan(request):
     if 'background_img' in request.data:
         image = base64_to_image(request.data['background_img'][0], request.data['background_img'][1])
         clan.background = image
+    clan.followers.add(user)
     clan.save()
     return Response({"success": "Clan created successfully"})
 
@@ -196,7 +209,7 @@ def my_clans(request):
     return Response({"clans": data})
 
 @api_view(['PUT'])
-def edit_clan(request):
+def update_clan(request):
     token = request.data['token']
     if not validate_token(token):
         return Response({"error": "Invalid token"})
@@ -212,7 +225,7 @@ def edit_clan(request):
         name = request.data['name']
         if not name or name == "":
             return Response({"error": "Name Invalid"})
-        if Clan.objects.filter(name=name).exists():
+        if Clan.objects.filter(name=name).exists() and Clan.objects.get(name=name).id != clan.id:
             return Response({"error": "Clan Name already exists"})
         clan.name = name
     if 'desc' in request.data:
@@ -220,23 +233,14 @@ def edit_clan(request):
         if not desc or desc == "":
             return Response({"error": "Description Invalid"})
         clan.desc = desc
+    if 'img' in request.data:
+        image = base64_to_image(request.data['img'][0], request.data['img'][1])
+        clan.clan_img = image
+    if 'background_img' in request.data:
+        image = base64_to_image(request.data['background_img'][0], request.data['background_img'][1])
+        clan.background = image
+    clan.save()
     return Response({"success": "Clan edited successfully"})
-
-@api_view(['DELETE'])
-def delete_clan(request):
-    token = request.data['token']
-    if not validate_token(token):
-        return Response({"error": "Invalid token"})
-    profile = Tokens.objects.get(token=token).user
-    user = profile.user
-    clan_id = request.data['id']
-    if Clan.objects.filter(id=clan_id).exists() == False:
-        return Response({"error": "Clan does not exist"})
-    clan = Clan.objects.get(id=clan_id)
-    if not clan.admins.filter(id=user.id).exists():
-        return Response({"error": "You are not an admin of this clan"})
-    clan.delete()
-    return Response({"success": "Clan deleted successfully"})
 
 @api_view(['GET'])
 def get_clan(request):
@@ -323,7 +327,7 @@ def create_post(request):
         content = request.data['content']
         if not content or content == "":
             return Response({"error": "Content Invalid"})
-    post = Post.objects.create(clan=clan, author=user, title=title, description=content, created=datetime.now())
+    post = Post.objects.create(clan=clan, author=user, title=title, description=content, created=datetime.today())
     if 'image' in request.data:
         image = base64_to_image(request.data['image'][0], request.data['image'][1])
         post.post_img = image
@@ -343,9 +347,12 @@ def basic_post(request):
     post = Post.objects.get(id=post_id)
     clan = ClanSerializer(Clan.objects.get(id=post.clan.id)).data
     author = ProfileSerializer(Profile.objects.get(id=User.objects.get(id=post.author.id).profile.id)).data
+    author["username"] = User.objects.get(id=post.author.id).username
     comments = CommentSerializer(Comment.objects.filter(post=post), many=True).data
     for comment in comments:
-        comment['user'] = ProfileSerializer(Profile.objects.get(id=User.objects.get(id=comment['user']).profile.id)).data
+        profile = ProfileSerializer(Profile.objects.get(id=User.objects.get(id=comment['user']).profile.id)).data
+        profile["username"] = User.objects.get(id=comment['user']).username
+        comment['user'] = profile
     return Response({"author": author, "clan": clan, "comments": comments})
     
 @api_view(['POST'])
@@ -414,3 +421,55 @@ def main_feed(request):
         data.append(PostSerializer(post).data)
     data.sort(key=lambda x: x['created'], reverse=True)
     return Response({"posts": data})
+
+@api_view(['GET'])
+def search(request):
+    token = request.GET['token']
+    if not validate_token(token):
+        return Response({"error": "Invalid token"})
+    profile = Tokens.objects.get(token=token).user
+    user = profile.user	
+    clans = Clan.objects.filter(followers=user)
+    posts = []
+    for clan in clans:
+        posts.extend(Post.objects.filter(clan=clan))
+    if "search" in request.GET:
+        title = unidecode(request.GET['search']).lower()
+        for post in list(posts):
+            if title not in unidecode(post.title).lower():
+                posts.remove(post)
+    if "clan" in request.GET:
+        clan = request.GET['clan']
+        if Clan.objects.filter(id=clan).exists():
+            clan = Clan.objects.get(id=clan)
+            for post in list(posts):
+                if post.clan != clan:
+                    posts.remove(post)
+        else:
+            posts = []
+    if "user" in request.GET:
+        username = request.GET['user']
+        if User.objects.filter(username=username).exists():
+            user = User.objects.get(username=username)
+            for post in list(posts):
+                if post.author != user:
+                    posts.remove(post)
+        else:
+            posts = []
+    if "date" in request.GET:
+        date = request.GET['date']
+        for post in list(posts):
+            if str(post.created.date()) != str(date):
+                posts.remove(post)
+    data=[]
+    clans=[]
+    for post in posts:
+        post = PostSerializer(post).data
+        user = User.objects.get(id=post['author'])
+        post['author'] = ProfileSerializer(Profile.objects.get(id=user.profile.id)).data
+        post['username'] = user.username
+        post['clan'] = ClanSerializer(Clan.objects.get(id=post['clan'])).data
+        data.append(post)
+        if post['clan'] not in clans:
+            clans.append(post['clan'])
+    return Response({"posts": data, "clans": clans})

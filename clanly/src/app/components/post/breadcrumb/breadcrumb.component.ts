@@ -10,6 +10,7 @@ export class BreadcrumbComponent implements OnChanges {
   @Input() user: string = 'User';
   @Input() clanImg: string = 'https://placeimg.com/400/400/people';
   @Input() userImg: string = 'https://placeimg.com/400/400/people';
+  @Input() id: string = '0';
 
   constructor() { }
 
@@ -18,6 +19,7 @@ export class BreadcrumbComponent implements OnChanges {
     this.user = changes['user'].currentValue;
     this.clanImg = changes['clanImg'].currentValue;
     this.userImg = changes['userImg'].currentValue;
+    this.id = changes['id'].currentValue;
   }
 
 }

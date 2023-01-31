@@ -10,53 +10,10 @@
         </thead>
         <tbody class="bg-primary">
             <!-- row 1 -->
-            <tr>
-                
-                <td class="bg-primary border-0 text-base-100 font-extrabold cursor-pointer hover:underline">Lorem ipsum dolor sit amet.</td>
+            <tr *ngFor="let post of posts">
+                <td class="bg-primary border-0 text-base-100 font-extrabold cursor-pointer hover:underline">{{post.title}}</td>
                 <div class="flex mt-2 justify-end mr-3">
-                    <app-breadcrumb clan="clan" user="user"></app-breadcrumb>
-                </div>
-            </tr>
-            <tr >
-                
-                <td class="bg-primary border-0 text-base-100 font-extrabold cursor-pointer hover:underline">Lorem ipsum dolor sit amet.</td>
-                <div class="flex mt-2 justify-end mr-3">
-                    <app-breadcrumb clan="clan" user="user"></app-breadcrumb>
-                </div>
-            </tr>
-            <tr >
-                
-                <td class="bg-primary border-0 text-base-100 font-extrabold cursor-pointer hover:underline">Lorem ipsum dolor sit amet.</td>
-                <div class="flex mt-2 justify-end mr-3">
-                    <app-breadcrumb clan="clan" user="user"></app-breadcrumb>
-                </div>
-            </tr>
-            <tr >
-                
-                <td class="bg-primary border-0 text-base-100 font-extrabold cursor-pointer hover:underline">Lorem ipsum dolor sit amet.</td>
-                <div class="flex mt-2 justify-end mr-3">
-                    <app-breadcrumb clan="clan" user="user"></app-breadcrumb>
-                </div>
-            </tr>
-            <tr >
-                
-                <td class="bg-primary border-0 text-base-100 font-extrabold cursor-pointer hover:underline">Lorem ipsum dolor sit amet.</td>
-                <div class="flex mt-2 justify-end mr-3">
-                    <app-breadcrumb clan="clan" user="user"></app-breadcrumb>
-                </div>
-            </tr>
-            <tr >
-                
-                <td class="bg-primary border-0 text-base-100 font-extrabold cursor-pointer hover:underline">Lorem ipsum dolor sit amet.</td>
-                <div class="flex mt-2 justify-end mr-3">
-                    <app-breadcrumb clan="clan" user="user"></app-breadcrumb>
-                </div>
-            </tr>
-            <tr >
-                
-                <td class="bg-primary border-0 text-base-100 font-extrabold cursor-pointer hover:underline">Lorem ipsum dolor sit amet.</td>
-                <div class="flex mt-2 justify-end mr-3">
-                    <app-breadcrumb clan="clan" user="user"></app-breadcrumb>
+                    <app-breadcrumb [clan]="post.clan.name" [user]="post.username" [clanImg]="getImg(post.clan.clan_img)" [userImg]="getImg(post.author.profile_img)" [id]="post.clan.id"></app-breadcrumb>
                 </div>
             </tr>
         </tbody>

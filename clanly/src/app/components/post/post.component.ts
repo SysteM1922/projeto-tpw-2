@@ -15,8 +15,8 @@ export class PostComponent implements OnChanges {
   @Input() post: any;
   id: string | any = '';
   comments: any = [];
-  clan: any;
-  user: any;
+  clan: any = {};
+  user: any = {};
   clanImg: string = 'https://placeimg.com/400/400/people';
   userImg: string = 'https://placeimg.com/400/400/people';
   isOwner: boolean = false;

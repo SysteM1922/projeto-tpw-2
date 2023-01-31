@@ -34,6 +34,7 @@ import { EditprofileComponent } from './components/editprofile/editprofile.compo
 import { CommentComponent } from './components/post/comment/comment.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EditclanComponent } from './components/editclan/editclan.component';
   
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { FormsModule } from '@angular/forms';
     BigformComponent,
     EditprofileComponent,
     CommentComponent,
+    EditclanComponent,
   ],
   imports: [
     BrowserModule,

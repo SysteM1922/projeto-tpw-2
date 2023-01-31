@@ -19,17 +19,19 @@ export class AuthService implements CanActivate{
   }
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
-    if(route.routeConfig && (route.routeConfig.path === 'login' || route.routeConfig.path === 'signup')) {
+    if(route.routeConfig && (route.routeConfig.path === 'login' || route.routeConfig.path === 'signup' || route.routeConfig.path === 'page-not-found')) {
       if (sessionStorage.getItem('token')) {
         this.router.navigate(['/home']);
         return false;
       }
+      sessionStorage.setItem('reloadFlag', 'true');
       return true;
     }
     if (sessionStorage.getItem('token')) {
       return true;
     }
     this.router.navigate(['/login']);
+    sessionStorage.setItem('reloadFlag', 'true');
     return false;
   }
 

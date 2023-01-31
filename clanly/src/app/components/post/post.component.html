@@ -8,7 +8,7 @@
 
             <div class=" rounded-lg overflow-hidden border w-full lg:w-12/12 md:w-12/12 bg-white mx-auto">
                 <div class="w-full flex justify-between p-3">
-                    <app-breadcrumb [clan]="clan.name" [user]="user.name" [clanImg]="clanImg"
+                    <app-breadcrumb [clan]="clan.name" [user]="user.username" [clanImg]="clanImg" [id]="clan.id"
                         [userImg]="userImg"></app-breadcrumb>
                     <div class="mx-1 tooltip tooltip-left" data-tip="Delete Post" *ngIf="isOwner">
                         <button (click)="deletePost()"><i

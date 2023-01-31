@@ -36,6 +36,11 @@ export class ApiService {
     return this.http.get(url);
   }
 
+  getBasicClan(clan: any): Observable<any> {
+    const url = this.baseURL + 'basic_clan?id=' + clan + '&token=' + sessionStorage.getItem("token");
+    return this.http.get(url);
+  }
+
   updateProfile(header: any): Observable<any> {
     const url = this.baseURL + 'update_profile/';
     header.token = sessionStorage.getItem("token");
@@ -53,8 +58,8 @@ export class ApiService {
     return this.http.get(url);
   }
 
-  editClan(header: any): Observable<any> {
-    const url = this.baseURL + 'edit_clan/';
+  updateClan(header: any): Observable<any> {
+    const url = this.baseURL + 'update_clan/';
     header.token = sessionStorage.getItem("token");
     return this.http.put(url, header);
   }
@@ -116,6 +121,11 @@ export class ApiService {
 
   getMainFeed(): Observable<any> {
     const url = this.baseURL + 'main_feed?token=' + sessionStorage.getItem("token");
+    return this.http.get(url);
+  }
+
+  search(search: any): Observable<any> {
+    const url = this.baseURL + 'search?' + search + '&token=' + sessionStorage.getItem("token");
     return this.http.get(url);
   }
 }

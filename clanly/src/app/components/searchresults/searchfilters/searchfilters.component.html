@@ -1,26 +1,23 @@
 <div class=" bg-primary rounded-xl h-96 -mt-[0.75rem] shadow-2xl" data-aos="fade-right" data-aos-delay="1900">
     <h1 class="text-2xl mt-3 ml-6 text-base-100 font-bold pt-2"> Filters</h1>
-    <form>
+    <form [formGroup]="filterForm">
         <div class="flex flex-col gap-2 mt-3">
             <div class="relative w-3/4 mb-3 mx-auto ">
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Clan:
                 </label>
                 <label for="underline_select" class="sr-only">Underline select</label>
-                <select id="underline_select"
+                <select id="underline_select" formControlName="clan"
                     class="select py-2.5 text-center px-0 w-full text-sm text-gray-500 bg-white border-1 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                    <option selected>Choose a Clan</option>
-                    <option value="1">Clan 1</option>
-                    <option value="2">Clan 2</option>
-                    <option value="3">Clan 3</option>
-                    <option value="4">Clan 4</option>
+                    <option value="" selected>Choose a Clan</option>
+                    <option *ngFor="let clan of clans" [value]="clan.id">{{clan.name}}</option>
                 </select>
             </div>
             <div class="relative w-3/4 mb-3 mx-auto ">
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     From:
                 </label>
-                <input type="text" placeholder="Username"
+                <input type="text" placeholder="Username" formControlName="user"
                     class="input w-full text-sm text-center font-bold text-gray-500 bg-white border-1 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" />
             </div>
 
@@ -38,14 +35,14 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <input datepicker type="text"
+                    <input type="date" formControlName="date"
                         class="w-full text-sm text-center  font-bold rounded-lg h-12 text-gray-500 bg-white border-1 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                         placeholder="Select date">
                 </div>
 
             </div>
             <div class=" w-full mx-auto flex justify-center">
-                <button class="btn bg-base-100" type="submit">Apply</button>
+                <button class="btn bg-base-100" type="submit" (click)="filter()" >Apply</button>
             </div>
         </div>
     </form>

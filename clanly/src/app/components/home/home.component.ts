@@ -14,6 +14,10 @@ export class HomeComponent{
     this.api.getMainFeed().subscribe((data: any) => {
       this.posts = data.posts;
     });
+    if (sessionStorage.getItem('reloadFlag')) {
+      sessionStorage.removeItem('reloadFlag');
+      window.location.reload();
+    }
   }
 }
 

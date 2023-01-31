@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiService } from 'src/app/services/api-service.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-bigform',
@@ -14,8 +15,9 @@ export class BigformComponent implements OnInit {
   editForm: FormGroup | any;
   img: File | any;
   background_img: File | any;
+  clan_id: string | any;
 
-  constructor(private api: ApiService, private auth: AuthService, private router: Router) {
+  constructor(private api: ApiService, private auth: AuthService, private router: Router, private route: ActivatedRoute) {
     this.editForm = new FormGroup({
       name: new FormControl(),
       desc: new FormControl(),
@@ -26,14 +28,17 @@ export class BigformComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
     if (this.type === "user") {
       this.api.getBasicProfile().subscribe((data: any) => {
-        console.log(data);
         this.editForm.controls.name.setValue(data.name);
         this.editForm.controls.desc.setValue(data.bio);
       });
-    } else if (this.type === "clan") {
+    } else if (this.type === "edit-clan") {
+      this.clan_id = this.route.snapshot.paramMap.get('id');
+      this.api.getBasicClan(this.clan_id).subscribe((data: any) => {
+        this.editForm.controls.name.setValue(data.name);
+        this.editForm.controls.desc.setValue(data.desc);
+      });
     }
   }
 
@@ -146,6 +151,50 @@ export class BigformComponent implements OnInit {
       } else {
         this.api_call(header);
       }
+    } else if (this.type === "edit-clan") {
+      let header: { name: string, id: string, desc: string, img?:any, background_img?:any, token?: any } = {
+        name: this.editForm.value.name,
+        desc: this.editForm.value.desc,
+        id: this.clan_id,
+      };
+      if (this.img) {
+        let reader = new FileReader();
+        reader.readAsDataURL(this.img);
+        reader.onload = () => {
+          header.img = [reader.result as string, this.img.name];
+          if (this.background_img) {
+            let reader2 = new FileReader();
+            reader2.readAsDataURL(this.background_img);
+            reader2.onload = () => {
+              header.background_img = [reader2.result as string, this.background_img.name];
+              this.api_call(header);
+            }
+          }
+          else {
+            this.api_call(header);
+          }
+        }
+      }
+      else if (this.background_img) {
+        let reader = new FileReader();
+        reader.readAsDataURL(this.background_img);
+        reader.onload = () => {
+          header.background_img = [reader.result as string, this.background_img.name];
+          if (this.img) {
+            let reader2 = new FileReader();
+            reader2.readAsDataURL(this.img);
+            reader2.onload = () => {
+              header.img = [reader2.result as string, this.img.name];
+              this.api_call(header);
+            }
+          }
+          else {
+            this.api_call(header);
+          }
+        }
+      } else {
+        this.api_call(header);
+      }
     }
   }
 
@@ -172,6 +221,16 @@ export class BigformComponent implements OnInit {
         else {
           alert(data.success);
           this.router.navigate(['/myclans']);
+        }
+      });
+    } else if (this.type === "edit-clan") {
+      this.api.updateClan(header).subscribe((data: any) => {
+        if (data.hasOwnProperty('error')) {
+          alert(data.error);
+        }
+        else {
+          alert(data.success);
+          this.router.navigate(['/clan/' + this.clan_id]);
         }
       });
     }
