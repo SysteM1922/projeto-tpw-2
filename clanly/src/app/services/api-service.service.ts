@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  private baseURL = 'http://localhost:8000/api/';
+  private baseURL = 'https://system1922.pythonanywhere.com/api/';
 
   constructor(private http: HttpClient) { }
 

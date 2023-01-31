@@ -8,6 +8,6 @@ export class ImageService {
   constructor() { }
 
   getImage(image: string) {
-    return 'http://localhost:8000/images/' + image;
+    return 'https://system1922.pythonanywhere.com/images/' + image.split('/images/')[1] ;
   }
 }

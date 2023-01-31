@@ -21,6 +21,7 @@
     "@auth0/angular-jwt": "^5.1.2",
     "chart.js": "^3.6.0",
     "daisyui": "^2.46.0",
+    "firebase": "^9.16.0",
     "flowbite": "^1.5.5",
     "ng2-charts": "^4.1.1",
     "ngx-typed-js": "^2.1.1",
