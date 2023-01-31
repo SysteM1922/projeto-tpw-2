@@ -1,0 +1,108 @@
+<div class=" rounded-lg overflow-hidden w-10/12 lg:w-12/12 md:w-6/12 bg-base-100 mx-auto">
+    <div class="mx-auto lg:w-100% mt-12"> <img class="mx-auto" data-aos="zoom-in-down" data-aos-delay="10"
+            src="../../assets/logo-solo-white.png ">
+        <div class="w-full flex justify-center p-3 mt-12" data-aos="fade-up" data-aos-delay="500">
+            <div class="overflow-x-auto relative shadow-md rounded-lg sm:overflow-x-hidden">
+                <table class="lg:w-96 text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="py-3 px-6 text-left">
+                                Clan
+                            </th>
+
+                            <th scope="col" class="py-3 pr-5 text-right">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let clan of clans">
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row"
+                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left">
+                                <a href="/clan/{{clan.id}}"
+                                    class="font-medium text-base-100 dark:text-blue-500 hover:underline">c/{{clan.name}}</a>
+                            </th>
+                            <td class="py-4 px-6 text-right">
+                                <i class=" text-2xl fa fa-wrench mr-2 cursor-pointer" data-tooltip-target="tooltip-post"
+                                data-modal-toggle="clanModal" *ngIf="clan.isAdmin"></i>
+                            </td>
+                        </tr>
+                        <div id="clanModal" tabindex="-1" aria-hidden="true"
+                            class="hidden overflow-y-auto overflow-x-hidden fixed z-50 md:inset-0 h-modal md:h-50%">
+                            <div
+                                class="relative flex flex-col min-w-0 break-words w-8/12 mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+                                <div class="rounded-t bg-white mb-0 px-6 py-6">
+                                    <div class="text-center flex justify-between">
+                                        <h6 class="text-blueGray-700 text-xl font-bold">
+                                            Edit Clan
+                                        </h6>
+                                        <h6 class="text-blueGray-700 text-xl font-bold">
+                                            <button data-modal-toggle="clanModal" class="text-base select-none">
+                                                <i class="fa-solid fa-x"></i> </button>
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+                                    <form>
+                                        <div class="flex justify-center">
+                                            <div class="text-center pt-4">
+                                                <button
+                                                    class="bg-base-100 text-white active:bg-base-100 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                                                    type="submit">
+                                                    Save
+                                                </button>
+                                            </div>
+                                            <div class=" text-center pt-4">
+                                                <button
+                                                    class="bg-error text-white active:bg-error font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                                                    type="submit">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap">
+                                            <div class="w-full lg:w-12/12 px-4">
+                                                <div class="relative w-full mb-3">
+                                                    <label
+                                                        class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                                        htmlfor="grid-password">
+                                                        Name
+                                                    </label>
+                                                    <textarea type="text" name="name"
+                                                        class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                        rows="4"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="w-full lg:w-12/12 px-4">
+                                                <div class="relative w-full mb-3">
+                                                    <label
+                                                        class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                                        htmlfor="grid-password">
+                                                        Description
+                                                    </label>
+                                                    <textarea type="text" name="description"
+                                                        class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                        rows="4"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-row mx-auto justify-center mt-5" data-aos="fade-right" data-aos-delay="900">
+        <a href="/createclan">
+            <button type="button"
+                class="bg-base-300 text-white rounded-lg border-purple-900 py-2 hover:bg-purple-900 hover:text-white px-3">
+                <div class="flex flex-row align-middle">
+                    <p><i class="fa fa-plus mr-2"></i> New Clan</p>
+                </div>
+            </button>
+        </a>
+    </div>

@@ -1,0 +1,10 @@
+<app-profilebanner [imageUrl]="imageUrl"></app-profilebanner>
+<div class="relative py-16 bg-base-100">
+    <div class="container mx-auto px-4">
+        <app-profile entity="user" [nFollowing]="nFollowing" [nPosts]="nPosts" [nComments]="nComments" [imageUrl]="profileImageUrl" [name]="name" [desc]="bio" [labels]="labels" [data]="data"></app-profile>
+        <div *ngFor="let post of posts">
+            <app-post title="{{post.title}}"
+                content="{{post.content}}" [post]="post"></app-post>
+        </div>
+    </div>
+</div>

@@ -4,21 +4,25 @@ from app.models import *
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ('id', 'user', 'id_user', 'bio', 'fname', 'lname', 'profile_img', 'cover_img')
+        fields = ('id', 'user', 'bio', 'name', 'profile_img', 'cover_img')
+    profile_img = serializers.StringRelatedField(read_only=True)
+    cover_img = serializers.StringRelatedField(read_only=True)
 
-class CommunitySerializer(serializers.ModelSerializer):
+class ClanSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Community
-        fields = ('name', 'id_community', 'description', 'communityimg', 'background', 'members', 'admins', \
-            'banned', 'created', 'updated', 'private')
+        model = Clan
+        fields = ('name', 'id', 'desc', 'clan_img', 'background', 'followers', 'admins')
+    clan_img = serializers.StringRelatedField(read_only=True)
+    background = serializers.StringRelatedField(read_only=True)
+    
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ('id', 'user', 'post', 'content')
 
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'title', 'id_post', 'description', 'postimg', 'community', 'author', 'created', 'updated')
-
-class CommentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Comment
-        fields = ('id', 'user', 'post', 'id_comment', 'content', 'created_at', 'updated_at')
+        fields = ('id', 'title', 'description', 'post_img', 'clan', 'author', 'created')
+    post_img = serializers.StringRelatedField(read_only=True)
 

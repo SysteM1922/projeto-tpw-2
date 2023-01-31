@@ -3,6 +3,6 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Profile)
-admin.site.register(Community)
+admin.site.register(Clan)
 admin.site.register(Post)
 admin.site.register(Comment)

@@ -15,7 +15,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import app.views as views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-]
+    path("api/login/", views.login),
+    path("api/signup/", views.signup),
+    path("api/logout/", views.logout),
+    path("api/profile/", views.profile),
+    path("api/basic_profile/", views.basic_profile),
+    path("api/update_profile/", views.update_profile),
+    path("api/create_clan/", views.create_clan),
+    path("api/my_clans/", views.my_clans),
+    path("api/edit_clan/", views.edit_clan),
+    path("api/delete_clan/", views.delete_clan),
+    path("api/get_clan/", views.get_clan),
+    path("api/follow_clan/", views.follow_clan),
+    path("api/unfollow_clan/", views.unfollow_clan),
+    path("api/following_clans/", views.following_clans),
+    path("api/create_post/", views.create_post),
+    path("api/basic_post/", views.basic_post),
+    path("api/create_comment/", views.create_comment),
+    path("api/delete_post/", views.delete_post),
+    path("api/delete_comment/", views.delete_comment),
+    path("api/main_feed/", views.main_feed),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
