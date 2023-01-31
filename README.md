@@ -90,16 +90,16 @@ Django Models
 This script defines Django models for a social media application.
 Import statements
 
-    from django.contrib.auth import get_user_model imports the user model from Django's authentication system.
-    from django.db import models imports Django's base model class.
+from django.contrib.auth import get_user_model imports the user model from Django's authentication system.
+from django.db import models imports Django's base model class.
 
 User Model
 
-    User = get_user_model() sets the user model to the one defined by the authentication system.
+User = get_user_model() sets the user model to the one defined by the authentication system.
 
 Profile Model
 
-    Profile extends the base models.Model class.
+Profile extends the base models.Model class.
     It has a one-to-one relationship with the user model, where a profile is related to a single user, defined by user = models.OneToOneField(User, on_delete=models.CASCADE). The on_delete argument specifies what happens when the referenced user is deleted.
     The id field is defined as an integer field and is set as the primary key id = models.IntegerField(primary_key=True).
     The profile has a bio field, which is a text field with a default value of "Hey, I'm in Clanly!", and can be left blank bio = models.TextField(blank=True, default="Hey, I'm in Clanly!").
@@ -110,7 +110,7 @@ Profile Model
 
 Clan Model
 
-    Clan extends the base models.Model class.
+ Clan extends the base models.Model class.
     The clan has a name field, which is a character field with a maximum length of 100 name = models.CharField(max_length=100).
     The id field is defined as an auto field and is set as the primary key id = models.AutoField(primary_key=True).
     The clan has a desc field, which is a text field that can be left blank desc = models.TextField(blank=True).
