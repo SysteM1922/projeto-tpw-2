@@ -85,6 +85,41 @@ Similarly, the PostComponent was used to display individual posts in multiple pl
 
 Overall, the use of reusable components in the Clanly social network project allowed for more efficient development and maintenance of the application, as well as making it easier to add new features and functionality.
 
+Django Models
+
+This script defines Django models for a social media application.
+Import statements
+
+    from django.contrib.auth import get_user_model imports the user model from Django's authentication system.
+    from django.db import models imports Django's base model class.
+
+User Model
+
+    User = get_user_model() sets the user model to the one defined by the authentication system.
+
+Profile Model
+
+    Profile extends the base models.Model class.
+    It has a one-to-one relationship with the user model, where a profile is related to a single user, defined by user = models.OneToOneField(User, on_delete=models.CASCADE). The on_delete argument specifies what happens when the referenced user is deleted.
+    The id field is defined as an integer field and is set as the primary key id = models.IntegerField(primary_key=True).
+    The profile has a bio field, which is a text field with a default value of "Hey, I'm in Clanly!", and can be left blank bio = models.TextField(blank=True, default="Hey, I'm in Clanly!").
+    The profile has a name field, which is a character field with a maximum length of 50 name = models.CharField(max_length=50).
+    The profile has a profile_img field, which is an image field that can be left blank and has a default image profile_img = models.ImageField(blank=True, upload_to='profile_images/', default='defaults/no-profile.png').
+    The profile has a cover_img field, which is an image field that can be left blank and has a default image cover_img = models.ImageField(blank=True, upload_to='cover_images/', default='defaults/no-background.png').
+    The __str__ method returns the username of the related user.
+
+Clan Model
+
+    Clan extends the base models.Model class.
+    The clan has a name field, which is a character field with a maximum length of 100 name = models.CharField(max_length=100).
+    The id field is defined as an auto field and is set as the primary key id = models.AutoField(primary_key=True).
+    The clan has a desc field, which is a text field that can be left blank desc = models.TextField(blank=True).
+    The clan has a clan_img field, which is an image field with a default image clan_img = models.ImageField(upload_to='clan_images/', default='defaults/no-clan.png').
+    The clan has a background field, which is an image field with a default image background = models.ImageField(upload_to='background_images/', default='defaults/no-background.png').
+    The clan has a followers field, which is a many-to-many relationship with the user model followers = models.ManyToManyField(User, related_name='members'). The related_name argument specifies the name of the reverse relation from the user model to the clan model.
+    The clan has a date_created field, which is a date-time field and is set to the current date and time when the clan is created date_created = models.DateTimeField(auto_now_add=True).
+The str method returns the name of the clan.
+
 ## URLs
 
 ### Página de Login (Starting Page)
