@@ -9,18 +9,17 @@
 ## Introduction
 
 This second assignment is a repetition of the theme of the first 
-assignment: Clanly, and it is an improvement in terms of the UX/UI, presenting a very pleasant aesthetic experience. However, as mentioned in the presentation, 
-this was not completed so we only present the front-end (Angular 
-project) as finished and the back-end (Django Rest Framework project) as
- incomplete. As a result, most of the pages are static, with few or no 
-connections to each other or the back-end. Therefore, navigation will 
-have to be done through URLs, provided at the end of this document.
+assignment: Clanly, and it is an improvement in terms of the UX/UI, presenting a very pleasant aesthetic experience.
+
+## Improvements
+
+Since the project delivered in normal season corresponding to this was just static pages, we consider it not worth mentioning the improvements since this time the project is complete and incomparably better than the last one, and can be treated as a virtually new project, repeating the theme of the projects presented in normal season.
 
 ## Deployment
 
-The Angular Project: [clanly-tpw2.firebaseapp.com](clanly-tpw2.firebaseapp.com)
+The Angular Project: [clanly-tpw-33c4a.web.app](clanly-tpw-33c4a.web.app)
 
-The DRF Project: [SysteM1922.pythonanywhere.com](SysteM1922.pythonanywhere.com)
+The DRF Project: [systeM1922.pythonanywhere.com](systeM1922.pythonanywhere.com)
 
 ## Deployment Local
 
@@ -46,8 +45,10 @@ python manage.py runserver
 ```
 
 ## Access credentials
-
-Since there was no authentication implemented, there are no credentials required.
+```
+Username: testuser
+Password: testuser
+```
 
 ## Angular
 
@@ -222,55 +223,10 @@ On success, returns a JSON object with the following fields:
 | Field     | Type   | Description                                           |
 | --------- | ------ | ----------------------------------------------------- |
 | `success` | string | Message indicating the clan was updated successfully. |
-## URLs
 
-### Página de Login (Starting Page)
+## Conclusion
 
-[clanly-tpw2.firebaseapp.com/login](clanly-tpw2.firebaseapp.com/login)
-
-### Página de Signup
-
-[clanly-tpw2.firebaseapp.com/signup](clanly-tpw2.firebaseapp.com/signup)
-
-### Home Page
-
-[clanly-tpw2.firebaseapp.com/home](clanly-tpw2.firebaseapp.com/home)
-
-### Página de User
-
-[clanly-tpw2.firebaseapp.com/user](clanly-tpw2.firebaseapp.com/user)
-
-### Página de Clan
-
-[clanly-tpw2.firebaseapp.com/clan](clanly-tpw2.firebaseapp.com/clan)
-
-### Página de MyClans
-
-[clanly-tpw2.firebaseapp.com/myclans](clanly-tpw2.firebaseapp.com/myclans)
-
-### Página de Post
-
-[clanly-tpw2.firebaseapp.com/postpage](clanly-tpw2.firebaseapp.com/postpage)
-
-### Página para editar o perfil
-
-[clanly-tpw2.firebaseapp.com/editprofile](clanly-tpw2.firebaseapp.com/editprofile)
-
-### Página para criar um clan
-
-[clanly-tpw2.firebaseapp.com/createclan](clanly-tpw2.firebaseapp.com/createclan)
-
-### Página Resultados de Pesquisa
-
-[clanly-tpw2.firebaseapp.com/searchresults](clanly-tpw2.firebaseapp.com/searchresults)
-
-### Página de Error
-
-[clanly-tpw2.firebaseapp.com/page-not-found](clanly-tpw2.firebaseapp.com/page-not-found) (Ou qualquer outra página que não exista)
-
-## Conclusão
-
-Apesar de não termos conseguido concluir o projeto nos moldes em que era requerido, acreditamos que a implementação do front-end foi bem conseguida e que está desenvolvida de forma a ser facilmente integrada com o back-end. No entanto, como referido anteriormente, o back-end não está concluído, o que impossibilitou a ligação entre o Angular e o Django Rest Framework. Mesmo sabendo que há muitos pontos a melhorar e a implementar, acreditamos que o trabalho realizado até ao momento servirá como um excelente ponto de partida para uma futura continuação do projeto.
+In conclusion, Clanly is a social network web app that has been developed using Django Rest Framework (DRF) and Angular. The app is designed to allow users to join various communities or "clans", interact with each other, and share content with one another. The use of DRF has enabled the app to provide a robust and secure API for the front-end Angular app to consume, while Angular has provided a sleek and intuitive user interface. Overall, the combination of DRF and Angular has resulted in a highly functional and user-friendly web application that meets the needs of its target audience. With its many features and the potential for further development, Clanly is poised to become a leading social network platform in the future.
 
 ## Referências
 
