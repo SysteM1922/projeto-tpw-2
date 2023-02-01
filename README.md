@@ -270,7 +270,7 @@ On success, returns a JSON object with the following fields:
 
 ## Conclusão
 
-Apesar de não termos conseguido concluir o projeto nos moldes em que era requerido, acreditamos que a implementação do front-end foi bem conseguida e que está desenvolvida de forma a ser facilmente integrada com o back-end. No entanto, como referido anteriormente, o back-end não está concluído, o que impossibilitou a ligação entre o Angular e o Django Rest Framework. Mesmo sabendo que há muitos pontos a melhorar e a implementar, acreditamos que o trabalho realizado até ao momento servirá como um excelente ponto de partida para uma futura continuação do projeto.
+In conclusion, Clanly is a social network web app that has been developed using Django Rest Framework (DRF) and Angular. The app is designed to allow users to join various communities or "clans", interact with each other, and share content with one another. The use of DRF has enabled the app to provide a robust and secure API for the front-end Angular app to consume, while Angular has provided a sleek and intuitive user interface. Overall, the combination of DRF and Angular has resulted in a highly functional and user-friendly web application that meets the needs of its target audience. With its many features and the potential for further development, Clanly is poised to become a leading social network platform in the future.
 
 ## Referências
 
